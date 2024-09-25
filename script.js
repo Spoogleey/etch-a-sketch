@@ -9,6 +9,17 @@ window.onload = () => changeGridSize();
 gridSizeButton.onclick = () => changeGridSize();
 resetGridButton.onclick = () => resetGrid();
 
+// Function for generating random number
+function randomNumber() {
+    let number = Math.floor(Math.random() * 255);
+    return number;
+}
+
+// Function for generating a random colour
+function randomColour() {
+    return `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
+}
+
 // Function for changing the grid size via user input
 function changeGridSize() {
     const rows = document.querySelectorAll(".row");
@@ -45,7 +56,7 @@ function changeGridSize() {
 
     gridColumn.forEach((columns) => {
     columns.addEventListener("mouseover", () => {
-        columns.style.backgroundColor = "black";
+        columns.style.backgroundColor = randomColour();
     });
 });
 }
