@@ -12,3 +12,11 @@ for(let i = 0; i < (16); i++) {
     }
     gridContainer.appendChild(row);
 }
+
+const gridColumn = document.querySelectorAll(".column");
+
+gridColumn.forEach((columns) => {
+    columns.addEventListener("mouseover", () => {
+        columns.style.backgroundColor = "black";
+    });
+});
