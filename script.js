@@ -1,9 +1,11 @@
 const gridContainer = document.querySelector("#grid-container");
 const gridSizeButton = document.querySelector(".grid-size");
 const gridSizeDisplay = document.querySelector(".current-size")
+const resetGridButton = document.querySelector(".reset");
 
 window.onload = () => changeGridSize();
 gridSizeButton.onclick = () => changeGridSize();
+resetGridButton.onclick = () => resetGrid();
 
 function changeGridSize() {
     const rows = document.querySelectorAll(".row");
@@ -40,4 +42,12 @@ function changeGridSize() {
         columns.style.backgroundColor = "black";
     });
 });
+}
+
+function resetGrid() {
+    const gridColumn = document.querySelectorAll(".column");
+
+    gridColumn.forEach((columns) => {
+        columns.style.backgroundColor = "white";
+    });
 }
